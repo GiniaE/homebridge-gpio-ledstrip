@@ -1,7 +1,0 @@
-{
-  "devDependencies": {
-  },
-  "globalDevDependencies": {
-    "node": "registry:dt/node#0.12.0+20160608055420"
-  }
-}

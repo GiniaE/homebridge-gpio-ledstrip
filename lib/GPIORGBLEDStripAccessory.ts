@@ -1,4 +1,4 @@
-import converter = require('color-convert');
+import * as converter from 'color-convert';
 import {Gpio} from "pigpio";
 import {changeBase} from "./Runtime";
 
@@ -77,7 +77,7 @@ export default class GPIORGBLEDStripAccessory {
 			this.updateRGB(0,0,0);
 			return;
 		}
-		var rgb = converter.hsv.rgb(this.hue(), this.saturation(), brightness);
+		var rgb = converter.hsv.rgb([this.hue(), this.saturation(), brightness]);
 		this.updateRGB(rgb[0], rgb[1], rgb[2]);
 	};
 

@@ -1,8 +1,10 @@
-/// <reference path="./typings/globals/node/index.d.ts" />
 
-import GPIORGBLEDStripAccessory from "./lib/GPIORGBLEDStripAccessory";
+/// <reference types="color-convert" />
+import * as converter from 'color-convert'; 
+import GPIORGBLEDStripAccessory from "./lib/GPIORGBLEDStripAccessory"; 
+import {Gpio} from "pigpio"; 
 
-module.exports = function (homebridge) {
+export default function (homebridge) {
   var exportTypes = {
     Accessory: homebridge.hap.Accessory,
     Service: homebridge.hap.Service,

@@ -6,6 +6,8 @@
     "type": "git",
     "url": "git://github.com/giniae/homebridge-gpio-ledstrip.git"
   },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "license": "ISC",
   "preferGlobal": true,
   "keywords": [
@@ -24,13 +26,23 @@
   },
   "dependencies": {
     "color-convert": "1.9.0",
-    "pigpio" :"0.6.2"
+    "pigpio": "0.6.2"
   },
   "devDependencies": {
-    "typescript": "^1.8",
-    "@types/pigpio": "0.4.1"
+    "@types/color-convert": "^1.9.0",
+    "@types/node": "^8.0.46",
+    "@types/pigpio": "^0.4.1",
+    "typescript": "^2"
   },
+"files2": [
+    "dist/",
+    "LICENSE"
+  ],
   "scripts": {
-    "prepublish": "node node_modules/typescript/bin/tsc --module commonjs index.ts -t ES5"
+    "lint": "tslint \"src/**/*.ts\" --project tsconfig.json --type-check",
+    "clean": "rm -rf dist",
+    "tsc": "./node_modules/typescript/bin/tsc",
+    "build": "npm run clean && npm run tsc",
+    "prepublish": "npm run build"
   }
 }
