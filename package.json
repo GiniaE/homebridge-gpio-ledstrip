@@ -6,8 +6,8 @@
     "type": "git",
     "url": "git://github.com/giniae/homebridge-gpio-ledstrip.git"
   },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main2": "dist/index.js",
+  "types2": "dist/index.d.ts",
   "license": "ISC",
   "preferGlobal": true,
   "keywords": [

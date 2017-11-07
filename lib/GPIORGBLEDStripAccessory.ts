@@ -58,6 +58,8 @@ export default class GPIORGBLEDStripAccessory {
 		this.rled = new Gpio(config["redPin"], {mode: Gpio.OUTPUT});
 		this.gled = new Gpio(config["greenPin"], {mode: Gpio.OUTPUT});
 		this.bled = new Gpio(config["bluePin"], {mode: Gpio.OUTPUT});
+		
+		this.resetState();
 	}
 
 	getServices(): any {
