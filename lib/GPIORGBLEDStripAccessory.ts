@@ -45,6 +45,7 @@ export default class GPIORGBLEDStripAccessory {
 			.on('change', resetState);
 		//Brightness
 		this.ledStripSvc.getCharacteristic(Characteristic.Brightness)
+			.setValue(100)
 			.on('change', resetState);
 
 		//Hue
